@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:clima/utilities/constants.dart';
 
 class LocationScreen extends StatefulWidget {
+  final locationWeather;
+
+  const LocationScreen( this.locationWeather);
+
   @override
   _LocationScreenState createState() => _LocationScreenState();
 }
@@ -74,3 +78,11 @@ class _LocationScreenState extends State<LocationScreen> {
     );
   }
 }
+
+
+  //   var longtitude = json.decode(data)['coord']['lat'];
+  //   var latitude = json.decode(data)['coord']['lon'];
+  //   var weatherDescription = json.decode(data)['weather'][0]['main'];
+  //   var condition = json.decode(data)['weather'][0]['id'];
+  //   var cityName = json.decode(data)['name'];
+  // }
