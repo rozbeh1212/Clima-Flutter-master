@@ -34,16 +34,11 @@ class _LoadingScreenState extends State<LoadingScreen> {
         'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$api&units=metric');
 
     var weatherData = await networkHelper.getData();
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return LocationScreen(
-            locationWeather: weatherData,
-          );
-        },
-      ),
-    );
+    Navigator.push(context, MaterialPageRoute(
+      builder: (context) {
+        return LocationScreen(locationWeather: weatherData);
+      },
+    ));
   }
 
   @override
