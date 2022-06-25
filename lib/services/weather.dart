@@ -31,3 +31,26 @@ class WeatherModel {
     }
   }
 }
+
+// diffrent weather background image for different weather condition
+class WeatherBackground {
+  String getWeatherBackground(int condition) {
+    if (condition < 300) {
+      return 'images/thunderstorm.jpg';
+    } else if (condition < 400) {
+      return 'images/light_rain.jpg';
+    } else if (condition < 600) {
+      return 'images/rain.jpg';
+    } else if (condition < 700) {
+      return 'images/snow.jpg';
+    } else if (condition < 800) {
+      return 'images/fog.jpg';
+    } else if (condition == 800) {
+      return 'images/clear_sky.jpg';
+    } else if (condition <= 804) {
+      return 'images/cloudy.jpg';
+    } else {
+      return 'images/default.jpg';
+    }
+  }
+}

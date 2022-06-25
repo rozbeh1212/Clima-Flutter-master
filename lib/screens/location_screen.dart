@@ -22,6 +22,9 @@ class _LocationScreenState extends State<LocationScreen> {
     updateUI(widget.locationWeather);
   }
 
+  WeatherBackground weatherBackground = new WeatherBackground();
+  String getWeatherbackground;
+
   void updateUI(dynamic weatherData) {
     setState(() {
       if (weatherData == null) {
@@ -35,6 +38,7 @@ class _LocationScreenState extends State<LocationScreen> {
       cityName = weatherData['name'];
       weatherMessage = weather.getMessage(temperature);
       weatherIcon = weather.getWeatherIcon(condition);
+      getWeatherbackground = weatherBackground.getWeatherBackground(condition);
     });
   }
 
@@ -44,7 +48,8 @@ class _LocationScreenState extends State<LocationScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/location_background.jpg'),
+            image: AssetImage(getWeatherbackground),
+          //  image: AssetImage('images/location_background.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
                 Colors.white.withOpacity(0.8), BlendMode.dstATop),
