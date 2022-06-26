@@ -50,7 +50,7 @@ class WeatherBackground {
     } else if (condition <= 804) {
       return 'images/cloudy.jpg';
     } else {
-      return 'images/default.jpg';
+      return 'images/city_background.jpg';
     }
   }
 }
